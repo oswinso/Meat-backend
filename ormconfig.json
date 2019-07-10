@@ -1,0 +1,10 @@
+{
+  "type": "postgres",
+  "host": "localhost",
+  "port": 5432,
+  "username": "oswinso",
+  "password": "1234",
+  "database": "meat",
+  "entities": ["src/**/*.entity{.ts,.ts}"],
+  "synchronize": true
+}
