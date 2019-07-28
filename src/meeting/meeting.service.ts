@@ -9,14 +9,15 @@ export class MeetingService {
   constructor(
     @InjectRepository(Meeting)
     readonly meetingRepository: Repository<Meeting>,
-  ) {}
+  ) {
+  }
 
   findAll(): Promise<Meeting[]> {
     return this.meetingRepository.find();
   }
 
   findOne(id: number): Promise<Meeting | undefined> {
-    return this.meetingRepository.findOne(id);
+    return this.meetingRepository.findOne(id, {relations: ['availabilities']});
   }
 
   createMeeting(meetingDto: CreateMeetingDto): Promise<Meeting> {
